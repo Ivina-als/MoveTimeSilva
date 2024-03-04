@@ -1,0 +1,23 @@
+.container-figure {
+  max-width: 5rem;
+}
+
+.container-figure-img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container-title {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 25rem;
+}
+
+.text-title {
+  color: rgb(106, 216, 216);
+  font-size: 3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
