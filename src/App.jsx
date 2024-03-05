@@ -6,12 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="container-title">
-        <div className="container-figure">
-          <img className="container-figure-img" src={light} />
-        </div>
-        <p className="text-title">MoveTime</p>
-      </div>
+      <div className="container-title"></div>
     </>
   );
 }
