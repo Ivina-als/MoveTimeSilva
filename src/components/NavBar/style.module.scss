@@ -1,0 +1,43 @@
+.containerNavbar {
+  background-color: #646262;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.figureNavBar {
+  padding: 5px;
+  margin: 0;
+  max-width: 3rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand {
+  display: none;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(194, 222, 246);
+  font-size: 2rem;
+}
+
+.listUl {
+  padding: 0;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.list a {
+  text-decoration: none;
+  color: rgb(194, 222, 246);
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .brand {
+    display: flex;
+  }
+}

@@ -9,11 +9,18 @@
 }
 
 .container-title {
+  height: 100svh;
+  margin: 0;
+  background-color: #232020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   display: flex;
   gap: 30px;
   align-items: center;
-  justify-content: space-around;
-  max-width: 25rem;
+  justify-content: center;
+  overflow-y: hidden;
 }
 
 .text-title {
