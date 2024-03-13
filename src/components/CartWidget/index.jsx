@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import cart from "/cart.png";
 import styles from "./style.module.scss";
 

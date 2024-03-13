@@ -2,11 +2,14 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import PokeApi from "./components/PokeApi";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [countCart, setCountCart] = useState(0);
   const [greeting] = useState("Em breve informações dos cards");
+  const [onAdd, setOnAdd] = useState(0);
+  const [stock, setStock] = useState(10);
 
   return (
     <div className="container-e-commerce">
@@ -16,7 +19,16 @@ function App() {
         open={open}
         setOpen={setOpen}
       />
-      <ItemListContainer greeting={greeting} />
+      <ItemListContainer
+        setCountCart={setCountCart}
+        countCart={countCart}
+        onAdd={onAdd}
+        setOnAdd={setOnAdd}
+        greeting={greeting}
+        stock={stock}
+        setStock={setStock}
+      />
+      {/* <PokeApi /> */}
     </div>
   );
 }

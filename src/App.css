@@ -13,6 +13,7 @@
   height: 100svh;
   width: 100%;
   margin: 0;
+  overflow-y: auto;
   background: #0f2027;
   background: -webkit-linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
   background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
