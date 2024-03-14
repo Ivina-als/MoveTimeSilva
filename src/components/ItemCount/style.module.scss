@@ -46,6 +46,7 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
   .containerAvailability,
   .containerQuantity {
+    display: flex;
     padding-bottom: 10px;
   }
 }

@@ -1,0 +1,26 @@
+.containerItemList {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .containerItemList {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .containerItemList {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .containerItemList {
+    justify-content: space-around;
+  }
+}
