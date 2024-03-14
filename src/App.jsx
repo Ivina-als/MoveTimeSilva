@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
-import PokeApi from "./components/PokeApi";
+import { stockItems } from "./utils/arr";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -27,8 +27,8 @@ function App() {
         greeting={greeting}
         stock={stock}
         setStock={setStock}
+        stockItems={stockItems}
       />
-      {/* <PokeApi /> */}
     </div>
   );
 }

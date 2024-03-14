@@ -4,6 +4,10 @@ import styles from "./style.module.scss";
 import gym from "/gym.jpg";
 
 const ItemCount = (props) => {
+  {
+    /*ItemCount na verdade era para ser somente o contador de click do estoque, 
+pelo que estoou entendendo  */
+  }
   return (
     <div className={styles.module}>
       <div className={styles.contentCardLeft}>

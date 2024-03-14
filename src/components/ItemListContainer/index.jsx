@@ -1,8 +1,30 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import ItemCount from "../ItemCount";
+// import ItemCount from "../ItemCount";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
+import ItemList from "../ItemList";
 
 function ItemListContainer(props) {
+  const [items, setItems] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        setItems(props.stockItems);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchItems();
+  }, []);
+
   return (
     <>
       <div className={styles.containerCards}>
@@ -14,7 +36,16 @@ function ItemListContainer(props) {
           especialistas em atividades físicas, para você ou sua equipe
         </aside>
       </div>
-      <ItemCount {...props} />
+
+      <div className={styles.containerItems}>
+        {loading && (
+          <div className={styles.loaderContainer}>
+            <div className={styles.loader}></div>
+          </div>
+        )}
+        {error && <span className={styles.containerError}>{error}</span>}
+        {!loading && !error && <ItemList items={items} />}
+      </div>
     </>
   );
 }
