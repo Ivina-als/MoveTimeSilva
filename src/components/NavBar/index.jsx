@@ -8,7 +8,7 @@ import CartWidget from "../CartWidget";
 const NavBar = (props) => {
   return (
     <>
-      <div className={styles.containerNavBar}>
+      <nav className={styles.containerNavBar}>
         <div className={styles.logoNavBar}>
           <figure className={styles.containerLogo}>
             <img className={styles.logo} src={logoLightning} />
@@ -37,21 +37,23 @@ const NavBar = (props) => {
           </button>
           <CartWidget {...props} />
         </div>
-      </div>
+      </nav>
       {props.open && (
-        <div className={styles.menuItensMobile}>
-          <ul className={styles.mobileList}>
-            {categorys.map((itens, i) => {
-              return (
-                <li key={i} className={styles.categoryItem}>
-                  <a href={itens.href} className={styles.categoryAnchor}>
-                    {itens.subtitile}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <>
+          <div className={styles.menuItensMobile}>
+            <ul className={styles.mobileList}>
+              {categorys.map((itens, i) => {
+                return (
+                  <li key={i} className={styles.categoryItem}>
+                    <a href={itens.href} className={styles.categoryAnchor}>
+                      {itens.subtitile}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </>
       )}
     </>
   );

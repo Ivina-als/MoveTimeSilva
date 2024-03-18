@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import ItemList from "../ItemList";
+import Loader from "../Loader";
 
 function ItemListContainer(props) {
   const [items, setItems] = useState([]);
@@ -38,11 +39,7 @@ function ItemListContainer(props) {
       </div>
 
       <div className={styles.containerItems}>
-        {loading && (
-          <div className={styles.loaderContainer}>
-            <div className={styles.loader}></div>
-          </div>
-        )}
+        {loading && <Loader />}
         {error && <span className={styles.containerError}>{error}</span>}
         {!loading && !error && <ItemList items={items} />}
       </div>
