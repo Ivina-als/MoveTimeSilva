@@ -25,6 +25,7 @@ export const categorys = [
 export const stockItems = [
   {
     id: 1,
+    category: "bodybuilding",
     title: "Profissionais de musculação",
     description:
       "Esses profissionais planeja treinos focados em Musculação, orientando alunos e solucionando dúvidas referentes aos exercícios. Acompanha o desenvolvimento dos alunos e realiza avaliação física com foco em hipertrofia muscular ou emagrecimento saudável. São os profissionais mais indicados para exercícios anaeróbicos ",
@@ -33,6 +34,7 @@ export const stockItems = [
   },
   {
     id: 2,
+    category: "functional",
     title: "Profissionais para aulas Funcionais",
     description:
       "Conte com educadores físicos especializados treinos que se baseia nos movimentos naturais do ser humano, como pular, correr, puxar, agachar, girar e empurrar. O praticante ganha força, equilíbrio, flexibilidade, condicionamento, resistência e agilidade. São profissionais indicados para exercícios aeróbicos do tipo funcional e Hit  ",
@@ -41,6 +43,7 @@ export const stockItems = [
   },
   {
     id: 3,
+    category: "dance",
     title: "Profissionais de danças populares",
     description:
       "Conte com professores de dança especializados em Zumba, FitDance, entre outros",
@@ -49,6 +52,7 @@ export const stockItems = [
   },
   {
     id: 4,
+    category: "hit",
     title: "Profissionais Hit",
     description:
       "Conte com profissionais focados em treinos de Hit, que utilizam a musculação, com métodos de intensidade que fazem com que o exercício seja praticado até que o indivíduo alcance a exaustão máxima possível",

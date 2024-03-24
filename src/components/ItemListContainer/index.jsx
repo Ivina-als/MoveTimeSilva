@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 // import ItemCount from "../ItemCount";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import ItemList from "../ItemList";
 import Loader from "../Loader";
+import { CartContext } from "../../context/cartContext";
 
 function ItemListContainer(props) {
+  const contextDefault = useContext(CartContext);
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

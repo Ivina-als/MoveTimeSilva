@@ -3,15 +3,16 @@ import { stockItems } from "../../utils/arr";
 import Loader from "../Loader";
 import ItemDetail from "../ItemDetail";
 import styles from "./style.module.scss";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ({ id = 1 }) => {
+const ItemDetailContainer = ({ id = 2 }) => {
   const [item, setItem] = useState(null);
+
   useEffect(() => {
     const getItem = () => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           const selectedItem = stockItems.find((item) => item.id === id);
-
           if (selectedItem) {
             resolve(selectedItem);
           } else {
