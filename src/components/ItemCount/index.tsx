@@ -4,25 +4,14 @@ import styles from "./style.module.scss";
 import gym from "/gym.jpg";
 
 const ItemCount = (props) => {
-  {
-    /*ItemCount na verdade era para ser somente o contador de click do estoque, 
-pelo que estoou entendendo  */
-  }
   return (
     <div className={styles.module}>
-      <div className={styles.contentCardLeft}>
-        <img className={styles.imgCard} src={gym} />
-        <p>Profissionais de musculação / Hipertrofia e emagrecimento</p>
-      </div>
       <div className={styles.containerItemList}>
         <div className={styles.submenu}>
-          <div className={styles.containerAvailability}>
-            <span>Profissionais disponíveis</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            Disponibilidade:{" "}
+            <div className={styles.quantityNumber}>{props.stock}</div>
           </div>
-          <div className={styles.containerQuantity}>
-            <span>Quantidade</span>
-          </div>
-          <div className={styles.quantityNumber}>{props.stock}</div>
           <div className={styles.buttonsQuantity}>
             <button
               className={`${styles.size} ${styles.increase}`}
@@ -60,6 +49,7 @@ pelo que estoou entendendo  */
           if ((props.stock != 0 && props.onAdd != 0) || props.onAdd != 0) {
             props.setCountCart(props.onAdd);
             props.setOnAdd(0);
+            window.location.href = "/cart";
           }
         }}
       >

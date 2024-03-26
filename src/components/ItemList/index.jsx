@@ -9,7 +9,7 @@ const ItemList = ({ items }) => {
     <>
       <div className={styles.containerItemList}>
         {items.map((item) => (
-          <Item key={item.id} item={item} link={`/category/:${item.id}`} />
+          <Item key={item.id} item={item} link={`/category/${item.category}`} />
         ))}
       </div>
     </>

@@ -28,6 +28,8 @@ const NavBar = (props) => {
           </ul>
         </div>
         <div className={styles.containerightButtons}>
+          <CartWidget {...props} />
+
           <button
             className={styles.buttonMobile}
             // eslint-disable-next-line react/prop-types
@@ -35,7 +37,6 @@ const NavBar = (props) => {
           >
             <img className={styles.menuMobile} src={menuMobile} />
           </button>
-          <CartWidget {...props} />
         </div>
       </nav>
       {props.open && (

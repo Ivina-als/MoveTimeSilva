@@ -2,10 +2,13 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
-import Home from "./Home";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartContext } from "./context/cartContext";
 import Item from "./components/Item";
+import ProfissionalDetail from "./components/ProfissionalDetail";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Loader from "./components/Loader";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -37,9 +40,22 @@ function App() {
                 />
               }
             />
-            <Route path="/category/:id" element={<ItemDetailContainer />} />
+            <Route
+              path="/category/:category"
+              element={<ItemDetailContainer />}
+            />
 
-            {/* <Route path="/category:id" element={<ItemDetailContainer />} /> */}
+            <Route
+              path="/profissionals"
+              element={
+                <ProfissionalDetail
+                  setCountCart={setCountCart}
+                  countCart={countCart}
+                />
+              }
+            />
+
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </div>
