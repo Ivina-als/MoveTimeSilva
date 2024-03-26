@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import "./App.css";
-import ItemListContainer from "./components/ItemListContainer";
-import { stockItems } from "./utils/arr";
+import ".././App.css";
+import ItemListContainer from "../components/ItemListContainer";
+import { stockItems } from "../utils/arr";
 
 function Home(props) {
   const [greeting] = useState("Em breve informações dos cards");

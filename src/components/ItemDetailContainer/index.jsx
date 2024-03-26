@@ -3,15 +3,19 @@ import { stockItems } from "../../utils/arr";
 import Loader from "../Loader";
 import ItemDetail from "../ItemDetail";
 import styles from "./style.module.scss";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ({ id = 1 }) => {
+const ItemDetailContainer = () => {
+  const { category } = useParams();
   const [item, setItem] = useState(null);
+
   useEffect(() => {
     const getItem = () => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          const selectedItem = stockItems.find((item) => item.id === id);
-
+          const selectedItem = stockItems.find(
+            (item) => item.category === category
+          );
           if (selectedItem) {
             resolve(selectedItem);
           } else {
@@ -25,7 +29,6 @@ const ItemDetailContainer = ({ id = 1 }) => {
       .then((item) => setItem(item))
       .catch((error) => console.log(error));
   }, []);
-
   return (
     <div className={styles.containerContentCard}>
       {item ? <ItemDetail item={item} /> : <Loader />}

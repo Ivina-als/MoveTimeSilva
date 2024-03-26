@@ -2,7 +2,10 @@ import styles from "./style.module.scss";
 
 const ItemDetail = ({ item }) => {
   return (
-    <button className={styles.containerItemDetail}>
+    <button
+      className={styles.containerItemDetail}
+      onClick={() => (window.location.href = `/profissionals`)}
+    >
       <img
         className={styles.imageDetail}
         src={item.pictureUrl}
