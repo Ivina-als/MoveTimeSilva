@@ -29,7 +29,6 @@ const ItemDetailContainer = () => {
       .then((item) => setItem(item))
       .catch((error) => console.log(error));
   }, []);
-  console.log(category);
   return (
     <div className={styles.containerContentCard}>
       {item ? <ItemDetail item={item} /> : <Loader />}
