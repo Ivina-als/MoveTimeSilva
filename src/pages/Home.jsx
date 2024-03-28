@@ -5,9 +5,8 @@ import ItemListContainer from "../components/ItemListContainer";
 import { stockItems } from "../utils/arr";
 
 function Home(props) {
-  const [greeting] = useState("Em breve informações dos cards");
   const [onAdd, setOnAdd] = useState(0);
-  const [stock, setStock] = useState(10);
+  // const [stock, setStock] = useState(10);
 
   return (
     <div className="containerBody">
@@ -18,9 +17,9 @@ function Home(props) {
         setCountCart={props.setCountCart}
         onAdd={onAdd}
         setOnAdd={setOnAdd}
-        greeting={greeting}
-        stock={stock}
-        setStock={setStock}
+        // greeting={greeting}
+        // stock={stock}
+        // setStock={setStock}
         stockItems={stockItems}
       />
     </div>

@@ -3,19 +3,18 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { CartContext } from "./context/cartContext";
+import { CartContext, CartProvider } from "./context/cartContext";
 import Item from "./components/Item";
 import ProfissionalDetail from "./components/ProfissionalDetail";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import Loader from "./components/Loader";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [countCart, setCountCart] = useState(0);
 
   return (
-    <CartContext.Provider value={[]}>
+    <CartProvider>
       <div
         style={open ? { overflowY: "hidden" } : { overflowY: "auto" }}
         className="container-e-commerce"
@@ -46,7 +45,7 @@ function App() {
             />
 
             <Route
-              path="/profissionals"
+              path="/profissionals/:category"
               element={
                 <ProfissionalDetail
                   setCountCart={setCountCart}
@@ -59,7 +58,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

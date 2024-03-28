@@ -19,3 +19,136 @@
 .imgProfissional {
   width: 200px;
 }
+.containerItemDetail {
+  background-color: #cbc9c9;
+  border-top: 5px solid #7483c3;
+  max-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 40px;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #555454;
+  //   border-radius: 24px;
+}
+
+.containerItemDetail:hover {
+  background-color: #e9e8e8;
+}
+
+.imageDetail {
+  max-width: 300px;
+  width: 100%;
+  align-self: center;
+}
+
+.descriptionDetail {
+  text-align: justify;
+  text-wrap: wrap;
+}
+
+.paragraphDetail b {
+  color: #cd6c4e;
+}
+
+// daqui em diante o novo carrinho
+
+.containerProfessional {
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  background-color: #f5f5f5d9;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titleCategory {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #555454;
+}
+.iconCategory {
+  width: 45px;
+}
+
+.cardProfessional {
+  background-color: #f5f5f580;
+  width: 100%;
+  border-top: 10px solid #2b5262;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.imgProfessional {
+  margin-left: 24px;
+  width: 20%;
+}
+
+.containerContentRigth {
+  margin-left: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  p {
+    width: 80%;
+  }
+}
+
+.disponibilityText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-weight: 700;
+}
+
+.containerDetails {
+  flex-wrap: wrap;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+
+.finishedCart {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  width: 20%;
+  margin: 24px;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .cardProfessional {
+    flex-direction: row;
+  }
+  .containerContentRigth {
+    margin-left: 0;
+  }
+}

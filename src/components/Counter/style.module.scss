@@ -1,0 +1,44 @@
+.containerCounter {
+  color: grey;
+}
+.containerCount,
+.count {
+  display: flex;
+  // border:
+}
+
+.disponibility {
+  color: #e16a2a;
+  border: 1px solid #acacad;
+  padding: 10px;
+}
+
+.containerCount {
+  justify-content: space-between;
+}
+.count {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #acacad;
+  padding: 10px;
+}
+.buttonIDo {
+  color: white;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 24px;
+  justify-self: flex-end;
+}
+.divButton {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.minus,
+.plus {
+  cursor: pointer;
+}
