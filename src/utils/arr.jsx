@@ -8,7 +8,7 @@ import atos from "/atos.jpg";
 import cora from "/cora.jpg";
 import mateus from "/mateus.png";
 import moises from "/moises.jpg";
-import y from "/yasmin2avif.avif";
+import y from "/mulher.webp";
 
 export const categorys = [
   {
@@ -133,6 +133,7 @@ export const profissionalsDetail = [
     descricao:
       "Bacharelado educação fífica, especialista High Intensity Interval Training, com 8 anos de experiência em consultoria de hit para alto diminuição de percentual de gordura",
     disponibilidade: 2,
+    investimento: 200,
   },
   {
     id: 7,

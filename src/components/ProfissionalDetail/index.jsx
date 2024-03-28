@@ -1,41 +1,19 @@
 import profissionalImg from "/profissional-musculacao.webp";
 import styles from "./style.module.scss";
-import ItemCount from "../ItemCount";
 
 import { useContext, useEffect, useState } from "react";
 import Loader from "../Loader";
 import { Link, useParams } from "react-router-dom";
 import { profissionalsDetail } from "../../utils/arr";
 import { CartContext } from "../../context/cartContext";
+import Counter from "../Counter";
 
 const ProfissionalDetail = (props) => {
-  const { cartItems } = useContext(CartContext);
-
-  {
-    /* proibir comprar duas vezes o mesmo 
-id e sincronizar a disponibilidade com a adição no carrinho e criar os metodos*/
-  }
+  const { addToCart, cartItems, isInCart } = useContext(CartContext);
 
   const { category } = useParams();
   const [loading, setLoading] = useState(true);
   const [totalCoust, setTotalCoust] = useState(0);
-
-  {
-    /*Tem que apagar esses estado stock */
-  }
-  const [stock, setStock] = useState(5);
-  const [onAdd, setOnAdd] = useState(0);
-
-  const [cartState] = useState({
-    category: "bodybuilding",
-    name: "Rossandra Alexa",
-    especialidade: "Hipertrofia",
-    descrição:
-      "Licenciatura em educação física, Atuou 15 anos com fisiculturismo, especilista em ganho de massa magra e hipertrofia",
-    disponibilidade: 5,
-    price: "220,00",
-    number: stock,
-  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,8 +29,15 @@ id e sincronizar a disponibilidade com a adição no carrinho e criar os metodos
 
   useEffect(() => {
     let total = 0;
+
     cartItems.forEach((profissional) => {
-      total += profissional.investimento;
+      const professionalArrOrigin = profissionalsDetail.find(
+        (objeto) => objeto.id === profissional.id
+      );
+
+      total +=
+        profissional.investimento *
+        (professionalArrOrigin.disponibilidade - profissional.disponibilidade);
     });
     setTotalCoust(total);
   }, [cartItems]);
@@ -63,68 +48,57 @@ id e sincronizar a disponibilidade com a adição no carrinho e criar os metodos
         <Loader />
       ) : (
         <div className={styles.containerMaxWidth}>
-          <div
-            style={{ display: "flex", gap: "20px", flexDirection: "column" }}
-          >
-            <p style={{ color: "#d3d3d3" }}>{category.toUpperCase()}</p>
+          <div className={styles.containerProfessional}>
+            <p className={styles.titleCategory}>
+              <img src={`/${category}.svg`} className={styles.iconCategory} />
+              <b>{category.toUpperCase()}</b>
+            </p>
             {professionals.map((professional) => {
               return (
-                <div
-                  key={professional.id}
-                  className={styles.containerItemDetail}
-                >
-                  <p>{professional.name}</p>
+                <div key={professional.id} className={styles.cardProfessional}>
                   <img
-                    className={styles.imageDetail}
+                    className={styles.imgProfessional}
                     src={professional.pictureUrl}
-                    alt={professional.name}
                   />
-                  {/* <h2>{profissional.especialidade}</h2> */}
-                  <p className={styles.descriptionDetail}>
-                    {professional.descricao}
-                  </p>
-                  <p className={styles.paragraphDetail}>
-                    Investimento: <b>R$ {professional.investimento}/mês</b>
-                  </p>
-                  {/*cartState é o profissional */}
-                  {/*stock tbm ta descrito no profissional */}
-                  {/* countCart deixa, é a contagem do carrinho */}
-                  <ItemCount
-                    professional={professional}
-                    cartState={cartState}
-                    onAdd={onAdd}
-                    setOnAdd={setOnAdd}
-                    stock={stock}
-                    setStock={setStock}
-                    countCart={props.countCart}
-                    setCountCart={props.setCountCart}
-                  />
+                  <div className={styles.containerContentRigth}>
+                    <h3>{professional.name}</h3>
+                    <p>{professional.descricao}</p>
+                    <div className={styles.containerDetails}>
+                      <div>
+                        <b>R$ {professional.investimento},00/mês por aluno</b>
+                      </div>
+                      <div className={styles.disponibilityText}>
+                        Disponibilidade para novos alunos:
+                        <Counter {...professional} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })}
-            {/* <ItemCount
-              cartState={cartState}
-              onAdd={onAdd}
-              setOnAdd={setOnAdd}
-              stock={stock}
-              setStock={setStock}
-              countCart={props.countCart}
-              setCountCart={props.setCountCart}
-            /> */}
-            <span style={{ color: "white", fontSize: "1.5rem" }}>
-              Total: R${totalCoust}/mês
-            </span>
-
-            <Link
-              style={
-                props.countCart === 0
-                  ? { color: "grey", cursor: "not-allowed" }
-                  : { color: "blue", cursor: "pointer" }
-              }
-              to={props.countCart != 0 ? "/cart" : ""}
+            <span
+              className={styles.total}
+              style={{
+                color: "#1f1f1f",
+                fontSize: "1.5rem",
+                marginLeft: "24px",
+              }}
             >
-              <p>Finalizar compra</p>
-            </Link>
+              {totalCoust != 0 && `Total: R$ ${totalCoust}/mês`}
+            </span>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <Link
+                to={"/cart"}
+                className={styles.finishedCart}
+                style={
+                  cartItems.length
+                    ? { backgroundColor: "#d58a22e8", cursor: "pointer" }
+                    : { backgroundColor: "#767575", cursor: "not-allowed" }
+                }
+              >
+                Finalizar Compra
+              </Link>
+            </div>
           </div>
         </div>
       )}

@@ -3,19 +3,25 @@ import cart from "/cart.png";
 import styles from "./style.module.scss";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cartContext";
+import { profissionalsDetail } from "../../utils/arr";
 
 const CartWidget = (props) => {
   const { cartItems } = useContext(CartContext);
   const [number, setNumber] = useState(0);
-  // console.log(cartItems);
 
   useEffect(() => {
     let total = 0;
     cartItems.forEach((profissional) => {
-      total += profissional.number;
+      const professionalArrOrigin = profissionalsDetail.find(
+        (objeto) => objeto.id === profissional.id
+      );
+
+      total +=
+        professionalArrOrigin.disponibilidade - profissional.disponibilidade;
     });
     setNumber(total);
   }, [cartItems]);
+
   return (
     <>
       <div className={styles.containerightCart}>

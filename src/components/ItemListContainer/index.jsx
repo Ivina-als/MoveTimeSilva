@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-// import ItemCount from "../ItemCount";
 import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import ItemList from "../ItemList";
