@@ -4,7 +4,7 @@ const ItemDetail = ({ item }) => {
   return (
     <button
       className={styles.containerItemDetail}
-      onClick={() => (window.location.href = `/profissionals`)}
+      onClick={() => (window.location.href = `/profissionals/${item.category}`)}
     >
       <img
         className={styles.imageDetail}

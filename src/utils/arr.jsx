@@ -2,6 +2,13 @@ import gym from "/gym.jpg";
 import funtional from "/funcional.jpg";
 import dancing from "/dance.jpg";
 import hit from "/hit.jpg";
+import cassandra from "/cassandra.webp";
+import yasmin from "/yasmin.jpg";
+import atos from "/atos.jpg";
+import cora from "/cora.jpg";
+import mateus from "/mateus.png";
+import moises from "/moises.jpg";
+import y from "/yasmin2avif.avif";
 
 export const categorys = [
   {
@@ -63,43 +70,79 @@ export const stockItems = [
 
 export const profissionalsDetail = [
   {
+    id: 1,
     category: "bodybuilding",
     name: "Rossandra Alexa",
     especialidade: "Musculação/hipertrofia",
-    descrição:
+    pictureUrl: yasmin,
+    descricao:
       "Licenciatura em educação física, Atuou 15 anos com fisiculturismo, especilista em ganho de massa magra e hipertrofia",
     disponibilidade: 2,
+    investimento: 350,
   },
   {
+    id: 2,
     category: "bodybuilding",
     name: "Atos Santos",
     especialidade: "Hipertrofia/Emagrecimento",
-    descrição:
+    pictureUrl: atos,
+    descricao:
       "Bacharelado em educação física, 7 anos de experiência com consultoria para emagrecimento saudável",
     disponibilidade: 3,
+    investimento: 350,
   },
   {
-    category: "funtional",
+    id: 3,
+    category: "functional",
     name: "Cora Lina",
     especialidade: "Emagrecimento saudável",
-    descrição:
+    pictureUrl: cora,
+    descricao:
       "Bacharelado em educação física, mestrado em fisiologia, atua há 17 anos  com aulas funcionais com foco em emagrecimento saudável e definição",
     disponibilidade: 2,
+    investimento: 200,
   },
   {
+    id: 4,
     category: "dance",
     name: "Mateus Solano",
     especialidade: "Dança contemporânea",
-    descrição:
+    pictureUrl: mateus,
+    descricao:
       "Bacharelado dança, com 5 anos de experiência em coreografias contemporâneas e músicas populares",
     disponibilidade: 4,
+    investimento: 120,
   },
   {
+    id: 5,
     category: "hit",
     name: "Moisés Arcuíro",
     especialidade: "hit de alto desempenho",
-    descrição:
+    pictureUrl: moises,
+    descricao:
       "Bacharelado educação fífica, especialista em nutrição esportiva, com 15 anos de experiência em consultoria de hit para alto desempenho e perda de peso",
     disponibilidade: 3,
+    investimento: 200,
+  },
+  {
+    id: 6,
+    category: "hit",
+    name: "Cassandra Douglas",
+    pictureUrl: cassandra,
+    especialidade: "hit para perda de gordura",
+    descricao:
+      "Bacharelado educação fífica, especialista High Intensity Interval Training, com 8 anos de experiência em consultoria de hit para alto diminuição de percentual de gordura",
+    disponibilidade: 2,
+  },
+  {
+    id: 7,
+    category: "dance",
+    name: "Yasmin Brunet",
+    especialidade: "Dança",
+    pictureUrl: y,
+    descricao:
+      "Bacharelado dança, com 5 anos de experiência em auxiliar alunos a se expressarem através da dança",
+    disponibilidade: 8,
+    investimento: 120,
   },
 ];

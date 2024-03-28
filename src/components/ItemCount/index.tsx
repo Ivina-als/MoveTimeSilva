@@ -1,20 +1,21 @@
 /* eslint-disable react/prop-types */
 import React, { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import gym from "/gym.jpg";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 
 const ItemCount = (props) => {
+  const { addToCart, cartItems } = useContext(CartContext);
+  console.log(cartItems);
   return (
-    <div
-      className={styles.module}
-      style={props.countCart === 0 ? { display: "flex" } : { display: "none" }}
-    >
+    <div className={styles.module}>
       <div className={styles.containerItemList}>
         <div className={styles.submenu}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             Disponibilidade:{" "}
-            <div className={styles.quantityNumber}>{props.stock}</div>
+            <div className={styles.quantityNumber}>
+              {props.professional.disponibilidade}
+            </div>
           </div>
           <div className={styles.buttonsQuantity}>
             <button
@@ -54,10 +55,11 @@ const ItemCount = (props) => {
           if ((props.stock != 0 && props.onAdd != 0) || props.onAdd != 0) {
             props.setCountCart(props.onAdd);
             props.setOnAdd(0);
+            addToCart({ ...props.professional, number: props.onAdd });
           }
         }}
       >
-        Adquirir
+        Contratar
       </button>
     </div>
   );
