@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import { CartContext } from "../../context/cartContext";
 import trash from "/trash.png";
-import { profissionalsDetail } from "../../utils/arr";
 
 const ProfessionalChosenCart = (props) => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, removeItem } = useContext(CartContext);
   const [allProfessionals, setAllProfessionals] = useState([]);
 
   useEffect(() => {
@@ -16,21 +15,7 @@ const ProfessionalChosenCart = (props) => {
     };
 
     filterAllProfessionals(props.category);
-  }, []);
-
-  // const findProfessional = (id) => {
-  //   const professional = profissionalsDetail.find(
-  //     (professional) => professional.id === id
-  //   );
-  //   setQuantity(professional.disponibilidade);
-  // };
-
-  const findProfessional = (id) => {
-    const professional = profissionalsDetail.find(
-      (professional) => professional.id === id
-    );
-    return professional.disponibilidade;
-  };
+  }, [props.category, cartItems]);
 
   return (
     <div className={styles.containerProfessionalChosenCart}>
@@ -54,7 +39,9 @@ const ProfessionalChosenCart = (props) => {
                     style={{ marginTop: "10px" }}
                     className={styles.containerPrice}
                   >
-                    <span>R$ {professionalsByCategory.investimento}/mês</span>
+                    <span className={styles.unitaryValue}>
+                      R$ {professionalsByCategory.investimento}/mês
+                    </span>
                   </div>
                 </div>
               </div>
@@ -66,14 +53,13 @@ const ProfessionalChosenCart = (props) => {
                   alignItems: "center",
                 }}
               >
-                <button className={styles.buttonTrash}>
+                <button
+                  className={styles.buttonTrash}
+                  onClick={() => removeItem(professionalsByCategory.id)}
+                >
                   <img className={styles.trash} src={trash} />
                 </button>
-                <span>
-                  x
-                  {findProfessional(professionalsByCategory.id) -
-                    professionalsByCategory.disponibilidade}
-                </span>
+                <span>x{professionalsByCategory.partialPurchaseQuantity}</span>
               </div>
             </div>
           </React.Fragment>

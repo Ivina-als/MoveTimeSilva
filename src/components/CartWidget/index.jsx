@@ -24,7 +24,12 @@ const CartWidget = (props) => {
 
   return (
     <>
-      <div className={styles.containerightCart}>
+      <div
+        className={styles.containerightCart}
+        style={
+          cartItems.length === 0 ? { display: "none" } : { display: "flex" }
+        }
+      >
         <button className={styles.buttonCart}>
           <img className={styles.cart} src={cart} />
 

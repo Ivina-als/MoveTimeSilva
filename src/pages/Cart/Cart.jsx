@@ -3,18 +3,22 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import { CartContext } from "../../context/cartContext";
 import CategoryCart from "../../components/CategoryCart";
+import { Link } from "react-router-dom";
 
 const Cart = (props) => {
   const { cartItems } = useContext(CartContext);
 
-  console.log(cartItems);
-  {
-    /*Mostra as categorias, o botão para limpar todo o 
-carrinho e o Total, botão de Confimar compra (Ilustrativo) */
-  }
   return (
     <div className={styles.containerCart}>
-      <CategoryCart />
+      <Link to={"/"} className={styles.back}>
+        Voltar
+      </Link>
+      {cartItems && <CategoryCart />}
+      {cartItems.length === 0 && (
+        <div style={{ color: "black", height: "100svh", marginTop: "24px" }}>
+          Carrinho vazio. Retorne para a Home para efetuar suas compras
+        </div>
+      )}
     </div>
   );
 };

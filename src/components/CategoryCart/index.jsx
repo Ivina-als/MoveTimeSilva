@@ -6,8 +6,8 @@ import ProfessionalChosenCart from "../ProfessionalChosenCart";
 
 const CategoryCart = (props) => {
   const { cartItems } = useContext(CartContext);
-
   const [categorys, setCategorys] = useState([]);
+  const [calcTotal, setCalcTotal] = useState(0);
 
   useEffect(() => {
     const findCategorys = cartItems.reduce((category, professional) => {
@@ -17,14 +17,32 @@ const CategoryCart = (props) => {
       return category;
     }, []);
     setCategorys(findCategorys);
-  }, []);
-  console.log(categorys);
-  {
-    /*Mostra o container de categoria) e cada um dos 
-    profissionais escolhidos para essa categoria*/
-  }
+  }, [cartItems]);
+
+  useEffect(() => {
+    const sum = cartItems.reduce((total, professional) => {
+      const valorProfessional =
+        professional.investimento * professional.partialPurchaseQuantity;
+      return total + valorProfessional;
+    }, 0);
+    setCalcTotal(sum);
+  }, [cartItems]);
+
   return (
     <div className={styles.CategoryCart}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <span className={styles.titleTotal}>Total:</span>
+        <span className={styles.totalValue}>
+          <b>R$ </b>
+          {calcTotal},00/mês
+        </span>
+      </div>
       {categorys.map((category, index) => {
         return (
           <div key={index} className={styles.containerCategoryCart}>
@@ -36,6 +54,9 @@ const CategoryCart = (props) => {
           </div>
         );
       })}
+      <button className={styles.buttonFinishedCart}>
+        Finalizar minha Compra
+      </button>
     </div>
   );
 };

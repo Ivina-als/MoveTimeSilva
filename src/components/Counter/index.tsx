@@ -58,6 +58,7 @@ const Counter = (props) => {
               addToCart({
                 ...props,
                 disponibilidade: props.disponibilidade - cartValue,
+                partialPurchaseQuantity: cartValue,
               });
               !isInCart(props.id) && setCartValue(0);
             }
