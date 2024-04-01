@@ -1,6 +1,4 @@
-import profissionalImg from "/profissional-musculacao.webp";
 import styles from "./style.module.scss";
-
 import { useContext, useEffect, useState } from "react";
 import Loader from "../Loader";
 import { Link, useParams } from "react-router-dom";

@@ -98,7 +98,7 @@ export const profissionalsDetail = [
     especialidade: "Emagrecimento saudável",
     pictureUrl: cora,
     descricao:
-      "Bacharelado em educação física, mestrado em fisiologia, atua há 17 anos  com aulas funcionais com foco em emagrecimento saudável e definição",
+      "Bacharelado em educação física, mestrado em fisiologia, atua há 6 anos  com aulas funcionais com foco em emagrecimento saudável e definição",
     disponibilidade: 2,
     investimento: 200,
   },
@@ -120,7 +120,7 @@ export const profissionalsDetail = [
     especialidade: "hit de alto desempenho",
     pictureUrl: moises,
     descricao:
-      "Bacharelado educação fífica, especialista em nutrição esportiva, com 15 anos de experiência em consultoria de hit para alto desempenho e perda de peso",
+      "Bacharelado educação física, especialista em nutrição esportiva, com 15 anos de experiência em consultoria de hit para alto desempenho e perda de peso",
     disponibilidade: 3,
     investimento: 200,
   },
@@ -131,7 +131,7 @@ export const profissionalsDetail = [
     pictureUrl: cassandra,
     especialidade: "hit para perda de gordura",
     descricao:
-      "Bacharelado educação fífica, especialista High Intensity Interval Training, com 8 anos de experiência em consultoria de hit para alto diminuição de percentual de gordura",
+      "Bacharelado educação física, especialista High Intensity Interval Training, com 8 anos de experiência em consultoria de hit para alto diminuição de percentual de gordura",
     disponibilidade: 2,
     investimento: 200,
   },
