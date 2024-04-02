@@ -1,6 +1,4 @@
-import profissionalImg from "/profissional-musculacao.webp";
 import styles from "./style.module.scss";
-
 import { useContext, useEffect, useState } from "react";
 import Loader from "../Loader";
 import { Link, useParams } from "react-router-dom";
@@ -87,17 +85,19 @@ const ProfissionalDetail = (props) => {
               {totalCoust != 0 && `Total: R$ ${totalCoust}/mês`}
             </span>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <Link
-                to={"/cart"}
-                className={styles.finishedCart}
-                style={
-                  cartItems.length
-                    ? { backgroundColor: "#d58a22e8", cursor: "pointer" }
-                    : { backgroundColor: "#767575", cursor: "not-allowed" }
-                }
-              >
-                Finalizar Compra
-              </Link>
+              {cartItems.length !== 0 && (
+                <Link
+                  to={"/cart"}
+                  className={styles.finishedCart}
+                  style={
+                    cartItems.length
+                      ? { backgroundColor: "#d58a22e8", cursor: "pointer" }
+                      : { backgroundColor: "#767575", cursor: "not-allowed" }
+                  }
+                >
+                  Finalizar Compra
+                </Link>
+              )}
             </div>
           </div>
         </div>

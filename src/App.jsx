@@ -7,7 +7,7 @@ import { CartContext, CartProvider } from "./context/cartContext";
 import Item from "./components/Item";
 import ProfissionalDetail from "./components/ProfissionalDetail";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   const [open, setOpen] = useState(false);
