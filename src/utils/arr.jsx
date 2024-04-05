@@ -76,7 +76,7 @@ export const profissionalsDetail = [
     especialidade: "Musculação/hipertrofia",
     pictureUrl: yasmin,
     descricao:
-      "Licenciatura em educação física, Atuou 15 anos com fisiculturismo, especilista em ganho de massa magra e hipertrofia",
+      "Licenciatura em educação física, Atuou 15 anos com fisiculturismo, especialista em ganho de massa magra e hipertrofia",
     disponibilidade: 2,
     investimento: 350,
   },

@@ -8,9 +8,15 @@ const ItemList = ({ items }) => {
   return (
     <>
       <div className={styles.containerItemList}>
-        {items.map((item) => (
-          <Item key={item.id} item={item} link={`/category/${item.category}`} />
-        ))}
+        {items.map((item) => {
+          return (
+            <Item
+              key={item.id}
+              item={item}
+              link={`/category/${item.category}`}
+            />
+          );
+        })}
       </div>
     </>
   );

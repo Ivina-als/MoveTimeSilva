@@ -8,9 +8,12 @@ function Home(props) {
   const [onAdd, setOnAdd] = useState(0);
   // const [stock, setStock] = useState(10);
 
+  console.log(props.fireStore);
+
   return (
     <div className="containerBody">
       <ItemListContainer
+        {...props.fireStore}
         open={props.open}
         setOpen={props.setOpen}
         countCart={props.countCart}
