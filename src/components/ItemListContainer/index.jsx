@@ -6,24 +6,9 @@ import ItemList from "../ItemList";
 import Loader from "../Loader";
 
 function ItemListContainer(props) {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(props.items);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setItems(props.stockItems);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-
-    fetchItems();
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
