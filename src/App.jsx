@@ -10,6 +10,7 @@ import ProfissionalDetail from "./components/ProfissionalDetail";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart/Cart";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import Loader from "./components/Loader";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAhmcKGdlarrTMHRTA4drWKOmxVKPvOdJ0",
@@ -41,7 +42,11 @@ function App() {
   }, []);
 
   if (products === undefined) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   return (
